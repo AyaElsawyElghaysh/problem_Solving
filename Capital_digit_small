@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{
+  char ch;
+   cin>>ch;
+   if(isdigit(ch)){
+       std::cout << "IS DIGIT" << std::endl;
+   }
+   else{
+       if(islower(ch)){
+           
+          std::cout <<"ALPHA"<<endl<< "IS SMALL" << std::endl; 
+       }
+       else 
+       std::cout <<"ALPHA"<<endl<< "IS CAPITAL" << std::endl;
+   }
+  
+   
+
+return 0;
+}
