@@ -1,0 +1,43 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{ long long A,B,C;
+ 
+    cin>>A>>B>>C;
+    
+  if(A>=B && A>=C){
+      if(B>=C){
+          std::cout << C<<" "<<A << std::endl;
+      }else 
+       std::cout << B<<" "<<A << std::endl;
+      
+      
+      
+      
+  }
+  else {
+      
+     if(B>=A && B>=C){
+         if(A>=C){
+             cout<<C<<" "<<B;
+         }
+         else std::cout << A<<" "<<B << std::endl;
+     }
+     else {
+         if(C>=A && C>=B){
+      
+             if(B>=A){
+                 cout<<A<<" "<<C;
+             }
+              else std::cout << B<<" "<<C<< std::endl;
+         }
+     }
+  }
+  
+   
+
+return 0;
+}
