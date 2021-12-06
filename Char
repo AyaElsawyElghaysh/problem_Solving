@@ -1,0 +1,21 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{
+  char ch;
+  char conv;
+   cin>>ch;
+       if(islower(ch)){
+           conv=toupper(ch);
+          std::cout <<conv << std::endl; 
+       }
+       else{ 
+       conv=tolower(ch);
+       std::cout <<conv << std::endl;
+       }
+return 0;
+}
