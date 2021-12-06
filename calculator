@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{
+    long long A,B;
+    char sign;
+    cin>>A>>sign>>B;
+    switch(sign){
+        case '*':
+        std::cout << A*B << std::endl;
+        break;
+        case '+':
+        std::cout << A+B << std::endl;
+        break;
+        case '-':
+        std::cout << A-B << std::endl;
+        break;
+        case '/':
+        std::cout << A/B << std::endl;
+    }
+
+return 0;
+}
