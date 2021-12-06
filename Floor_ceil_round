@@ -1,0 +1,14 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{ double A,B;
+    cin>>A>>B;
+    std::cout <<"floor "<<A<<" / "<<B<<" = " <<floor(A/B)<< std::endl;
+    std::cout <<"ceil "<<A<<" / "<<B<<" = " <<ceil(A/B)<< std::endl;
+    std::cout <<"round "<<A<<" / "<<B<<" = " <<round(A/B)<< std::endl;
+
+    return 0;
+}
