@@ -1,0 +1,16 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{ int A,B;
+    cin>>A>>B;
+    if(A>=B){
+        std::cout << "Yes" << std::endl;
+    }
+    else{
+        cout<<"No";
+    }
+   
+}
