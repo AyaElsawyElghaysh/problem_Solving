@@ -1,0 +1,12 @@
+#include <iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+  long long num1,num2;
+  std::cin >> num1>>num2;
+  std::cout << ((num1%10)+(num2%10)) << std::endl;
+   
+   
+}
