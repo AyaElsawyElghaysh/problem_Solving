@@ -1,0 +1,18 @@
+#include <algorithm>
+using namespace std;
+class Solution {
+public:
+  
+   bool containsDuplicate(vector<int>& ar) {
+
+        sort(ar.begin(),ar.end());
+
+				for (int j =0; j < ar.size()-1; j++) {
+					if (ar[j] == ar[j+1]) {
+						return true;
+					
+				}
+			}
+	return false;
+}
+};
