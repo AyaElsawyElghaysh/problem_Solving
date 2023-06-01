@@ -1,0 +1,21 @@
+class Solution {
+public:
+   vector<int> twoSum(vector<int>& nums, int target) {
+	vector<int> v(2);
+	map<int, int> num_exist;
+	for (int i = 0; i < nums.size(); i++) {
+		num_exist[nums[i]] = i;
+	}
+
+	for (int i = 0; i < nums.size(); i++) {
+		int res = target - nums[i];
+		if (num_exist.count(res) && num_exist[res] != i) {
+			v[0] = i;
+			v[1] = num_exist[res];
+		
+		}
+
+	}
+    	return v;
+}
+};
