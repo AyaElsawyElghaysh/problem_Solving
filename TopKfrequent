@@ -1,0 +1,23 @@
+bool sort_descending(const std::pair<int, int>& left, const std::pair<int, int>& right) {
+	return left.second > right.second;}
+class Solution {
+
+
+public:
+  vector<int> topKFrequent(vector<int>& nums, int k) {
+	vector<int> topFrequent(k);
+	unordered_map<int, int> count_elements;
+	for (int i = 0; i < nums.size(); i++) {
+		count_elements[nums[i]]++;
+	}
+	vector<pair<int, int>> vec(count_elements.begin(), count_elements.end());
+	sort(vec.begin(), vec.end(), sort_descending);
+	for (int i = 0; i < k; i++) {
+		topFrequent[i] = vec[i].first;
+	}
+
+	return topFrequent;
+    }
+
+
+};
