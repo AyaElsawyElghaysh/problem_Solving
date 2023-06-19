@@ -1,0 +1,91 @@
+#include<set>
+class Solution {
+	 bool check_subGrid(vector<vector<char>>& arr, int s, int c) {
+
+	set<char> subgrid;
+	for (int i = s; i < s + 3; i++) {
+		for (int j = c; j < c + 3; j++) {
+			if (arr[i][j] == '.') {
+				continue;
+			}
+			if (subgrid.count(arr[i][j]) == 1) {
+				return false;
+			}
+			else {
+				subgrid.insert(arr[i][j]);
+			}
+		}
+	}
+	return true;
+}
+
+public:
+    bool isValidSudoku(vector<vector<char>>& arr) {
+        bool vaid_rows = true;
+	for (int i = 0; i < 9; i++) {
+		set<char> rows;
+	
+		for (int j = 0; j < 9; j++) {
+			if (arr[i][j] == '.'){
+				continue;
+			}
+
+			if (rows.count(arr[i][j]) ) {  // it means the number is stored before 
+
+		
+				return false;
+			}
+
+			else {
+				rows.insert(arr[i][j]);
+			
+
+			}
+		
+
+
+		}
+	}
+	//check cols
+		for (int i = 0; i < 9; i++) {
+		set<char> cols;
+	
+		for (int j = 0; j < 9; j++) {
+			if (arr[j][i] == '.'){
+				continue;
+			}
+
+			if (cols.count(arr[j][i])) {  // it means the number is stored before 
+
+		
+				return false;
+			}
+
+			else {
+				cols.insert(arr[j][i]);
+			
+
+			}
+		
+
+
+		}
+	} 
+	//check the subgrid
+		for (int i = 0; i < 9; i += 3) {
+				for (int j = 0; j < 9; j += 3) {
+					if (!check_subGrid(arr, i, j)) {
+					//	vaid_rows = false;
+						return false;
+					}
+				}
+
+
+			}
+
+    return true;
+
+
+    }
+   
+};
