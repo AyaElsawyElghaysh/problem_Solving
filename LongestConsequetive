@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+       	set<int> numbers = {};
+	//save the unique numbers into a set
+	for (auto& n : nums) {
+		numbers.insert(n);
+	}
+	int longest = 0;
+
+	for (int i = 0; i < nums.size(); i++) {
+		// check if the number has a left number or NOT sinc if not has ,it will be a start of a consequative
+		if (!(numbers.count((nums[i] - 1)))) { //in the set
+			int length = 0;
+			while (numbers.count(nums[i] + length)) {
+				length += 1;
+
+			}
+			if (length > longest) {
+				longest = length;
+			}
+		}
+	}
+	return longest;
+}
