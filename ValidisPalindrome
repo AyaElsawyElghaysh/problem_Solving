@@ -1,0 +1,27 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        s.erase(std::remove_if(s.begin(), s.end(),
+		[](char c) { return !std::isalnum(c); }), s.end());
+	string lower = "";
+	for (int i = 0; i < s.size(); i++) {
+		lower += tolower(s[i]);
+	}
+	int f_index = 0;
+	int l_index = lower.size() - 1;
+	bool valid = false;
+	while (f_index < l_index) {
+		if (lower[f_index] == lower[l_index]) {
+			valid = true;
+			f_index++;
+			l_index--;
+		}
+		else {
+			return false;
+		}
+	}
+    return true;
+	
+	
+    }
+};
