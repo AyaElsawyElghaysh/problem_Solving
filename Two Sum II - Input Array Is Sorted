@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+      vector<int> arr(2);
+	// store the elements of the list in a hash map since each pair is NUM,INDEX
+	unordered_map<int, int> map;
+
+	for (int i = 0; i < nums.size(); i++) {
+		map[nums[i]] = i;
+	}
+	for (int i=0;i<nums.size();i++) {
+		int res = target - nums[i];
+		if (map.count(res)) {  // check if the res is in map or not
+			//cout << "key" << map[nums[i]];
+			arr[0] = i + 1;
+			arr[1]= map[res]+1;
+			break;
+		}
+
+	}
+return arr;
+
+}
+};
