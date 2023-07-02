@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& nums) {
+      	int max_profit = 0;
+	int l = 0;
+	int r = 1;
+	while (r < nums.size()) {
+		if (nums[l] < nums[r]) {
+			int p = nums[r] - nums[l];
+			max_profit = max(max_profit, p);
+			
+		}
+		else {
+			l = r;
+        
+		}
+		r++;
+	
+	}
+	return max_profit;
+}
+
+};
