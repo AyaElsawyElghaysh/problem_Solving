@@ -1,0 +1,44 @@
+class Solution {
+public:
+    int trap(vector<int>& nums) {
+     	int trapped_water = 0;
+	int LM = nums[0];
+	int RM = nums[nums.size() - 1];
+	int left_pointer = 1;
+	int right_pointer = nums.size() - 2;
+	for (int i = 1; i < nums.size() - 1; i++) {
+		if (LM <= RM) {
+				int min_value = min(LM, RM);
+				int trap = min_value - nums[left_pointer];
+				if (trap > 0) {
+					trapped_water += trap;
+				}
+				if (nums[left_pointer]>= LM) {
+			LM = nums[left_pointer];
+	         	}
+	 
+				left_pointer++;
+			}
+			else {
+			
+				if(LM>RM){
+			
+					int min_value = min(LM, RM);
+					int trap = min_value - nums[i];
+					if (trap > 0) {
+						trapped_water += trap;
+					}
+						if (nums[right_pointer] >= RM) {
+					RM = nums[right_pointer];
+			       	}
+					right_pointer--;
+
+				}
+
+			}
+		
+	}
+	return trapped_water;
+    }
+
+};
