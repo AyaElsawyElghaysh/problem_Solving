@@ -1,0 +1,39 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+				 int max_length = 1;
+			if(s.size()==0){
+				max_length=0;
+			}
+		
+	int l = 0;
+	int r = 1;
+	int count = 0;
+	string temp = "";
+	set<char> unique = {s[l]};  //au   {a}
+	while (r < s.size() ){
+		if (unique.count(s[r])==0) {
+			unique.insert(s[r]);  //
+			int s_size= unique.size();;
+			max_length = max(s_size, max_length);  //1
+			
+		
+		
+
+		}
+		else {
+			//release the hashset and add new values
+			unique.clear();
+			l++;
+			unique.insert(s[l]);
+			r = l ;
+			
+
+
+		}
+
+		++r;
+	}
+	return max_length;
+    }
+};
