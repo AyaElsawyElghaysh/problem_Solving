@@ -1,0 +1,40 @@
+class Solution {
+public:
+int characterReplacement(string s,int k){
+	unordered_map<char, int> map;
+	int asccii = 65;
+	for (int i = 0; i < 26; i++) {
+		map[char(asccii)] = 0;
+		asccii++;
+	}
+	int l = 0;
+	int r = 0;
+	int longest_substring = 1;
+	while (r < s.size() ){
+		map[s[r]]++;
+		char most_rep;
+		auto it = max_element(map.begin(), map.end(),
+			[](const auto& p1, const auto& p2) {
+				return p1.second < p2.second;
+			});
+
+		char max_key = it->first;
+		int max_value = it->second;
+		if (r - l + 1 - max_value >k) {
+			map[s[l]]--;
+			l++;
+		
+		}
+		
+		longest_substring = max(longest_substring, r - l + 1);
+		
+
+		r++;
+
+	}
+	return longest_substring;
+	
+}
+};
+        
+    
